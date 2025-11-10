@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Order</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      margin-top: 50px;
+    }
+    form {
+      display: inline-block;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 8px;
+      width: 200px;
+    }
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h2>🧾 Add Customer Order</h2>
+  <form action="/add" method="POST">
+    <input type="text" name="name" placeholder="Customer Name" required />
+    <input type="text" name="item" placeholder="Item Name" required />
+    <input type="number" name="amount" placeholder="Amount (₹)" required />
+    <button type="submit">Add Order</button>
+  </form>
+  <p><a href="/show">View All Orders</a></p>
+  <a href="/menu">Back to Menu</a>
+</body>
+</html>

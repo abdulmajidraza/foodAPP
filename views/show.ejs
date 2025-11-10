@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Show Orders</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      margin-top: 40px;
+    }
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 80%;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #4caf50;
+      color: white;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #4caf50;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>📋 All Customer Orders</h2>
+
+  <table>
+    <tr>
+      <th>Customer Name</th>
+      <th>Item</th>
+      <th>Amount (₹)</th>
+      <th>Timestamp</th>
+    </tr>
+    <% if (orders.length === 0) { %>
+      <tr><td colspan="4">No orders yet.</td></tr>
+    <% } else { %>
+      <% orders.forEach(order => { %>
+        <tr>
+          <td><%= order.name %></td>
+          <td><%= order.item %></td>
+          <td><%= order.amount %></td>
+          <td><%= order.timestamp %></td>
+        </tr>
+      <% }) %>
+    <% } %>
+  </table>
+
+  <a href="/add">➕ Add New Order</a><br>
+  <a href="/menu">Back to Menu</a>
+</body>
+</html>
