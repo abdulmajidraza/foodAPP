@@ -21,7 +21,7 @@ app.get("/menu", (req, res) => {
   res.render("index");
 });
 app.get("/detail", (req, res) => {
-  res.redirect("/add");
+  res.redirect("/show");
 });
 
 app.get("/add", (req, res) => {
@@ -44,3 +44,4 @@ app.get("/show", (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
